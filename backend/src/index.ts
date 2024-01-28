@@ -1,6 +1,7 @@
 import express, { Express } from "express";
 import cors from "cors";
 import { mongoDB } from "./repository/mongoDB";
+import { shopifyServer } from "./services/ShopifyServer";
 
 const port = 8000
 
@@ -20,10 +21,13 @@ class App {
                 res.send('Привет, мир!');
               });
 
+            shopifyServer.syncShopifyData()
+
             this.app.listen(port, () => {
                 console.log("Server is running on port " + port);
                 
             })
+
         } catch (error) {
             console.log(error);
         }
