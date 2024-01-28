@@ -62,4 +62,4 @@ export class ShopifyServer {
   }
 }
 
-export const shopifyServer = new ShopifyServer()
+export const shopifyServer = new ShopifyServer();
